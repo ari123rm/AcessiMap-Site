@@ -67,7 +67,7 @@ function RegisterPage() {
      <Container component="main" className="login-page-container">
       <Box className="login-box">
         <Typography component="h1" variant="h2">
-          Seja bem-vindo ao AcessiMap
+          Registre-se
         </Typography>
         
         {/* Mostra o alerta de erro se existir */}
