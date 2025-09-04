@@ -67,7 +67,7 @@ function RegisterPage() {
      <Container component="main" className="login-page-container">
       <Box className="login-box">
         <Typography component="h1" variant="h2">
-          Login
+          Seja bem-vindo ao AcessiMap
         </Typography>
         
         {/* Mostra o alerta de erro se existir */}
@@ -116,15 +116,15 @@ function RegisterPage() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Entrar
+            Registrar
           </Button>
         </Box>
         <Grid container justifyContent="flex-end">
           {/* --- CORREÇÃO AQUI --- */}
           {/* A Grid 'item' deve estar dentro da Grid 'container' */}
           
-            <Link component={RouterLink} to="/registro" variant="body2">
-              Não tem uma conta? Registre-se
+            <Link component={RouterLink} to="/login" variant="body2">
+              Já tem uma conta? Faça o login
             </Link>
           
         </Grid>
@@ -138,7 +138,7 @@ function RegisterPage() {
           sx={{ textTransform: 'none', fontSize: '1rem' }}
           className="google-btn"
         >
-          Entrar com Google
+          Registrar com Google
         </Button>
       </Box>
     </Container>
