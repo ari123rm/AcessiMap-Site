@@ -1,0 +1,144 @@
+// Usando aninhamento do Sass para organizar os estilos
+
+.place-details{
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  color:var( --text-primary-color);
+  background-color: var(--card-background-color);
+  h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color:var( --text-primary-color);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  p {
+    // Estilos para o parágrafo de endereço, se necessário
+    color:var( --text-primary-color);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+    color:var( --text-primary-color);
+  }
+  
+  h3 {
+    color:var( --text-primary-color);
+    // Estilos para o título "Notas de Acessibilidade"
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color:var( --text-primary-color);
+  }
+
+  .close-button {
+    justify-self: right;
+    position: relative;
+ 
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 1; // Melhora o alinhamento do "X"
+  }
+
+  .details-checklist {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .check-yes {
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  .check-no {
+    color: #f44336;
+  }
+}
+
+.start-evaluation-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  // ... adicione outros estilos para o botão
+}
+
+.place-photo {
+  width: 100%;
+  height: 200px; // Altura fixa para a imagem
+  object-fit: cover; // Garante que a imagem cubra a área sem distorcer
+  display: block; // Remove qualquer espaço extra abaixo da imagem
+  justify-items: center;
+}
+
+// Ajuste no Drawer do MUI para que a imagem não tenha padding
+  .MuiDrawer-paper {
+    // Seleciona o elemento Drawer do MUI
+    .place-details-panel {
+      // Se você tiver um wrapper dentro do Drawer, use-o
+      padding: 0 !important; // Remove o padding padrão para a imagem encostar no topo
+    }
+  }
+  // Estilos para o tooltip customizado
+.custom-tooltip {
+  padding: 5px;
+  max-width: 300px; // Evita que o tooltip fique muito largo
+  
+ 
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    padding: 3px 0;
+    color:black;
+   
+  }
+}
+
+// Override de estilo para a biblioteca react-tooltip, se necessário
+#category-tooltip {
+  background-color: #333;
+  color: var( --text-primary-color);
+  border-radius: 6px;
+  padding: 10px !important; // Usa !important para garantir a sobreposição
+  font-family: 'Roboto', sans-serif;
+  
+}
+}

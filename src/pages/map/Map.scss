@@ -1,0 +1,24 @@
+// O aninhamento não é necessário aqui, pois os seletores não são descendentes,
+// mas o arquivo funciona perfeitamente como .scss.
+
+.App {
+  display: flex;
+  height: calc(100vh - 64px); 
+  width: 100vw;
+  overflow: hidden;
+}
+
+.map-container {
+  flex-grow: 1; /* O mapa ocupa todo o espaço restante */
+  height: calc(100vh - 100px);
+  width: 90%;
+
+}
+
+.loading-panel {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}

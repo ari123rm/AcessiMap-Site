@@ -1,0 +1,24 @@
+// Em src/index.scss
+
+body.theme-light {
+  transition:1s;
+  --navbar-background-color: #1ada7a;
+  --background-color: #f4f6f8;
+  --card-background-color: #ffffff;
+  --text-primary-color: #212121;
+  --accent-color: #1976d2;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.568);
+
+  
+  
+}
+
+body.theme-dark {
+  transition:1s;
+  --navbar-background-color: #090929;
+  --background-color: #121212;
+  --card-background-color: #83838369;
+  --text-primary-color: #ffffff;
+  --accent-color: #90caf9;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);  
+}

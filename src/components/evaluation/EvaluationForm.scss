@@ -1,0 +1,54 @@
+.evaluation-form {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  h5{
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .evaluation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .vote-buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  .vote-btn {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &.yes.selected {
+      background-color: #4caf50;
+      color: white;
+      border-color: #4caf50;
+    }
+    
+    &.no.selected {
+      background-color: #f44336;
+      color: white;
+      border-color: #f44336;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    // ... estilos
+  }
+  
+  .error-message {
+      color: red;
+      text-align: center;
+  }
+}

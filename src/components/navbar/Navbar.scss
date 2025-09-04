@@ -1,0 +1,41 @@
+.navbar {
+  $oposite-color:var( --text-primary-color);
+  // Você pode customizar a cor de fundo aqui se não gostar do azul padrão do MUI
+  // background-color: #333 !important;
+  a{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+  }
+  height: 64px;
+  svg{
+      width: 40px;
+      height: 40px;
+      color: var( --text-primary-color);
+    }
+  background-color: var(--navbar-background-color);
+  .login-button{
+    width: 50px;
+    height: 100%;
+    
+  }
+ border-bottom: 1px solid $oposite-color;
+}
+
+.navbar-title {
+  color: var( --text-primary-color);
+  text-decoration: none; // Remove o sublinhado do link
+  display:flex;
+  align-items: center;
+ 
+  img{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 100%;
+    border: 1px solid black;
+  }
+  &:hover {
+    text-decoration: none; // Garante que não apareça sublinhado no hover
+  }
+  
+}

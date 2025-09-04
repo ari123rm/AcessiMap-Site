@@ -1,0 +1,38 @@
+// Nova versão que responde ao tema
+
+.login-page-container {
+  // Usa a variável de cor de fundo global
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 50px); 
+  padding: 10px;
+  // Adiciona uma transição suave para a mudança de cor
+  transition: background-color 0.3s ease;
+}
+
+.login-box {
+  // Usa as variáveis de cor para o "card" de login
+  background-color: var(--card-background-color);
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary-color); // O texto dentro também herda a cor correta
+
+  // Adiciona transições suaves aqui também
+  h2{
+    color: var(--text-primary-color);
+  }
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  input{
+
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  color:var(--text-primary-color);
+}
