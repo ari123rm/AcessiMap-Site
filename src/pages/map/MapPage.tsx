@@ -73,6 +73,7 @@ function MapPage() {
       .then((data: PlaceDetailsData & { latitude?: number, longitude?: number }) => {
         setSelectedPlace(data);
         
+        
         // 3. COMANDO DIRETO: Se temos a instância do mapa e as coordenadas, movemos o mapa
         if (data.latitude && data.longitude) {
           const newCenter = { lat: data.latitude, lng: data.longitude };

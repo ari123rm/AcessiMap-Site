@@ -19,6 +19,7 @@ export interface PlaceDetailsData {
   google_place_id: string; 
   endereco: string;
   photoUrl?: string | null;
+  photo_reference?:string;
   totalAvaliacoes: number;
   scores: {
     categoria: string;
@@ -77,7 +78,10 @@ function PlaceDetails({ place, onClose,onDataNeedsRefresh }: PlaceDetailsProps) 
       return total / place.scores.length;
   }
   const isOpen = !!place;
-  
+
+  const photoUrl2 = place.photo_reference
+      ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photo_reference}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+      : null;
 
   return (
      <Drawer
@@ -96,9 +100,9 @@ function PlaceDetails({ place, onClose,onDataNeedsRefresh }: PlaceDetailsProps) 
           <IconButton onClick={onClose} className="close-button">
               <CloseIcon />
             </IconButton>
-          {place.photoUrl && (
+          {photoUrl2 && (
             <img 
-              src={place.photoUrl} 
+              src={photoUrl2} 
               alt={`Foto de ${place.nome}`} 
               className="place-photo" // Adicionamos uma classe para estilizar
             />

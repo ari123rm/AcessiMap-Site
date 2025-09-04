@@ -177,7 +177,6 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
             return acc;
           }, {});
           let previousVotesArray = Object.values(previousVotes);
-          console.log(previousVotesArray)
           previousVotesArray.map((vote,index)=>{
             setVotes(prev => ({ ...prev, [index+1]: vote? true : false }));
           }
@@ -236,7 +235,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
                 </div>
               </div>
             ))}
-            {/* --- FIM DO BLOCO QUE FALTAVA --- */}
+          
 
             <div className="category-rating">
               <span>Sua nota geral para esta categoria:</span>

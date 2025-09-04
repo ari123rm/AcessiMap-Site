@@ -109,7 +109,7 @@ function RegisterPage() {
             autoComplete="current-senha"
             value={senha}
             onChange={e => setSenha(e.target.value)}
-          />
+          /> 
           <Button
             type="submit"
             fullWidth
