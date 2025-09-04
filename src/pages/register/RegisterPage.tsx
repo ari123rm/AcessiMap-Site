@@ -8,6 +8,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 
 import './RegisterPage.scss';
+import { API_BASE_URL } from '../../services/api';
 
 
 
@@ -27,7 +28,7 @@ function RegisterPage() {
     setError('');
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3001/api/usuarios/register', {
+      const response = await fetch(`${API_BASE_URL}/usuarios/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, email, senha }),
@@ -61,7 +62,7 @@ function RegisterPage() {
     );
   }
   
- const googleLoginUrl = 'http://localhost:3001/api/auth/google';
+ const googleLoginUrl = `${API_BASE_URL}/auth/google`;
   return (
     <Container component="main" className="register-page-container">
       <Box className="register-box">

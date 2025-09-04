@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
+import { API_BASE_URL } from '../../services/api';
 
 function VerifyEmailPage() {
   const [message, setMessage] = useState('Verificando sua conta...');
@@ -14,7 +15,7 @@ function VerifyEmailPage() {
 
     const verifyToken = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/usuarios/verify-email', {
+        const response = await fetch(`${API_BASE_URL}/usuarios/verify-email`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token }),

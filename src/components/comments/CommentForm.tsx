@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { TextField, Button } from '@mui/material';
 import { Box } from '@mui/material';
 import { on } from 'events';
+import { API_BASE_URL } from '../../services/api';
 
 interface CommentFormProps {
   estabelecimentoId: number;
@@ -26,7 +27,7 @@ const CommentForm = ({ estabelecimentoId, onCommentSuccess , submitPlaceDetails 
     if (!comment.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:3001/api/comentarios', {
+      const response = await fetch(`${API_BASE_URL}/comentarios`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

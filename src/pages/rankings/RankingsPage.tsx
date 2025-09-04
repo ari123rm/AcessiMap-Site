@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Select, MenuItem, FormControl, InputLabel, CircularProgress, List, ListItem, ListItemAvatar, Avatar, ListItemText } from '@mui/material';
 import StarRatingDisplay from '../../components/star/StarRatingDisplay';
+import { API_BASE_URL } from '../../services/api';
 
 // Interfaces para os dados
 interface RankedPlace {
@@ -29,14 +30,14 @@ function RankingsPage() {
   // Efeito para buscar as opções dos filtros (categorias e tipos) uma vez
   useEffect(() => {
     // Em um projeto real, Promise.all seria ótimo aqui
-    fetch('http://localhost:3001/api/categorias').then(res => res.json()).then(setCategories);
-    fetch('http://localhost:3001/api/tipos').then(res => res.json()).then(setPlaceTypes); // Assumindo que você criou esta rota
+    fetch(`${API_BASE_URL}/categorias`).then(res => res.json()).then(setCategories);
+    fetch(`${API_BASE_URL}/tipos`).then(res => res.json()).then(setPlaceTypes); // Assumindo que você criou esta rota
   }, []);
 
   // Efeito para buscar o ranking toda vez que um filtro mudar
   useEffect(() => {
     setIsLoading(true);
-    let apiUrl = `http://localhost:3001/api/rankings?sortBy=${sortBy}`;
+    let apiUrl = `${API_BASE_URL}/rankings?sortBy=${sortBy}`;
     if (filterByType !== 'all') {
       apiUrl += `&filterByType=${filterByType}`;
     }

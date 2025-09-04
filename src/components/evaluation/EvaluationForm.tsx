@@ -6,6 +6,7 @@ import '@smastrom/react-rating/style.css'; // <-- Importe o CSS também aqui
 import CommentForm from '../comments/CommentForm';
 
 import { Rating } from '@mui/material';
+import { API_BASE_URL } from '../../services/api';
 
 
 const customStyles = {
@@ -42,7 +43,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
   
   // Busca a lista de todos os itens de acessibilidade quando o componente monta
   useEffect(() => {
-  fetch('http://localhost:3001/api/itens')
+  fetch(`${API_BASE_URL}/itens`)
     .then(res => res.json())
     .then(data => {
       // Defensive Check: Ensure data is an array before setting it.
@@ -99,7 +100,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
 
       // Adiciona a chamada para o checklist se houver dados
       if (checklistEvaluations.length > 0) {
-        apiCalls.push(fetch('http://localhost:3001/api/avaliacoes', {
+        apiCalls.push(fetch(`${API_BASE_URL}/avaliacoes`, {
         method: 'POST', // Define o método como POST
         headers: {
           'Content-Type': 'application/json', // Informa que estamos enviando JSON
@@ -110,7 +111,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
       }
       // Adiciona a chamada para as notas se houver dados
       if (categoryRatingEvaluations.length > 0) {
-        apiCalls.push(fetch('http://localhost:3001/api/avaliacoes/categorias', {
+        apiCalls.push(fetch(`${API_BASE_URL}/avaliacoes/categorias`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
           body: JSON.stringify(categoryRatingEvaluations)
@@ -118,7 +119,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
       }
       if (categoryRatingEvaluations.length > 0) {
         apiCalls.push(
-          fetch('http://localhost:3001/api/avaliacoes/categorias', {
+          fetch(`${API_BASE_URL}/avaliacoes/categorias`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -163,7 +164,7 @@ function EvaluationForm({ estabelecimentoId, onEvaluationSuccess ,onDataNeedsRef
     if (token) {
       const fetchMyEvaluations = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/api/avaliacoes/me/${estabelecimentoId}`, {
+          const response = await fetch(`${API_BASE_URL}/avaliacoes/me/${estabelecimentoId}`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (!response.ok) return; // Não faz nada se não houver avaliações antigas

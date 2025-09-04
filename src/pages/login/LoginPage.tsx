@@ -10,6 +10,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 
 import './LoginPage.scss';
+import { API_BASE_URL } from '../../services/api';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -32,7 +33,7 @@ function LoginPage() {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch('http://localhost:3001/api/usuarios/login', {
+      const response = await fetch(`${API_BASE_URL}/usuarios/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, senha }),
@@ -46,7 +47,7 @@ function LoginPage() {
     }
   };
 
-  const googleLoginUrl = 'http://localhost:3001/api/auth/google';
+  const googleLoginUrl = `${API_BASE_URL}/auth/google`;
 
   return (
     // 2. Use <Container> e <Box> para criar a estrutura e centralizar

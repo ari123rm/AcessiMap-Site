@@ -11,6 +11,7 @@ import { darkMapStyle } from '../../config/darkMapStyle';
 
 import { CircularProgress } from '@mui/material';
 import { useAppTheme } from '../../hooks/useAppTheme';
+import { API_BASE_URL } from '../../services/api';
 
 
 const libraries: ("places")[] = ['places'];
@@ -65,7 +66,7 @@ function MapPage() {
     setIsLoadingDetails(true);
     setSelectedPlace(null);
 
-    const apiUrl = `http://localhost:3001/api/estabelecimentos/${googlePlaceId}`;
+    const apiUrl = `${API_BASE_URL}/estabelecimentos/${googlePlaceId}`;
 
     fetch(apiUrl)
       .then(res => res.json())
