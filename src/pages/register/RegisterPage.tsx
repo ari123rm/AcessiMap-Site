@@ -64,13 +64,14 @@ function RegisterPage() {
   
  const googleLoginUrl = `${API_BASE_URL}/auth/google`;
   return (
-    <Container component="main" className="register-page-container">
-      <Box className="register-box">
-        <Typography component="h1" variant="h5">
-          Criar Conta
+     <Container component="main" className="login-page-container">
+      <Box className="login-box">
+        <Typography component="h1" variant="h2">
+          Login
         </Typography>
         
-        {error && <Alert severity="error" sx={{ width: '100%', mt: 2 }}>{error}</Alert>}
+        {/* Mostra o alerta de erro se existir */}
+        {error && <Alert severity="error" sx={{ width: '100%' }}>{error}</Alert>}
 
         <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%', mt: 1 }}>
           <TextField
@@ -80,7 +81,7 @@ function RegisterPage() {
             id="nome"
             label="Nome Completo"
             name="nome"
-            autoComplete="name"
+            autoComplete="Seu Nome"
             autoFocus
             value={nome}
             onChange={e => setNome(e.target.value)}
@@ -93,6 +94,7 @@ function RegisterPage() {
             label="Endereço de Email"
             name="email"
             autoComplete="email"
+            autoFocus
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
@@ -104,47 +106,40 @@ function RegisterPage() {
             label="Senha"
             type="password"
             id="senha"
-            autoComplete="new-senha"
+            autoComplete="current-senha"
             value={senha}
             onChange={e => setSenha(e.target.value)}
           />
-          
-          { loading ? <CircularProgress />:
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Registrar
+            Entrar
           </Button>
-
-          }
-           
-            <Grid container justifyContent="flex-end">
-              
-              <Grid container justifyContent="flex-end">
-              {/* --- CORREÇÃO AQUI --- */}
-              {/* A Grid 'item' deve estar dentro da Grid 'container' */}
-              
-                <Link component={RouterLink} to="/login" variant="body2">
-                  Já tem uma conta? Faça login
-                </Link>
-              
-            </Grid>
-            <Divider sx={{ width: '100%' }}>OU</Divider>
-
-            <Button
-              fullWidth
-              variant="outlined"
-              startIcon={<GoogleIcon />}
-              href={googleLoginUrl} // Um botão MUI pode agir como um link
-              sx={{ textTransform: 'none', fontSize: '1rem' }}
-            >
-              Entrar com Google
-            </Button>
-          </Grid>
         </Box>
+        <Grid container justifyContent="flex-end">
+          {/* --- CORREÇÃO AQUI --- */}
+          {/* A Grid 'item' deve estar dentro da Grid 'container' */}
+          
+            <Link component={RouterLink} to="/registro" variant="body2">
+              Não tem uma conta? Registre-se
+            </Link>
+          
+        </Grid>
+        <Divider sx={{ width: '100%' }}>OU</Divider>
+
+        <Button
+          fullWidth
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          href={googleLoginUrl} // Um botão MUI pode agir como um link
+          sx={{ textTransform: 'none', fontSize: '1rem' }}
+          className="google-btn"
+        >
+          Entrar com Google
+        </Button>
       </Box>
     </Container>
   );

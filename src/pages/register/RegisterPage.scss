@@ -1,26 +1,38 @@
-// Variáveis para manter a consistência
-$primary-color: #1976d2;
-$background-color: #f4f6f8;
-$card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+// Nova versão que responde ao tema
 
-.register-page-container {
+.login-page-container {
+  // Usa a variável de cor de fundo global
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: $background-color;
-  padding: 20px;
+  min-height: calc(100vh - 50px); 
+  padding: 10px;
+  // Adiciona uma transição suave para a mudança de cor
+  transition: background-color 0.3s ease;
 }
 
-.register-box {
+.login-box {
+  // Usa as variáveis de cor para o "card" de login
+  background-color: var(--card-background-color);
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary-color); // O texto dentro também herda a cor correta
+
+  // Adiciona transições suaves aqui também
+  h2{
+    color: var(--text-primary-color);
+  }
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  input{
+
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   padding: 2.5rem;
-  background-color: white;
   border-radius: 12px;
-  box-shadow: $card-shadow;
   width: 100%;
   max-width: 400px;
+  color:var(--text-primary-color);
 }
