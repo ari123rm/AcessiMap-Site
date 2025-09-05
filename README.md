@@ -49,3 +49,15 @@ No diretório do projeto, você pode executar os seguintes comandos:
 * `npm test`: Executa os testes em modo interativo.
 * `npm run build`: Cria a aplicação para produção na pasta `build`.
 * `npm run eject`: Remove as dependências de construção e copia os arquivos de configuração para o diretório do projeto.
+
+
+### Variáveis de Ambiente Necessárias
+
+Para o correto funcionamento do projeto AcessiMap, o arquivo `.env` deve conter as seguintes variáveis de ambiente. Elas são essenciais para a integração com a API do Google Maps e o backend da aplicação.
+
+| Variável | Descrição | Exemplo de Valor |
+| :--- | :--- | :--- |
+| `REACT_APP_GOOGLE_MAPS_API_KEY` | Chave da API do Google Maps para carregar o mapa. | `SuaChaveDaAPIDoGoogleMaps` |
+| `REACT_APP_API_IP` | Endereço IP ou domínio do backend da aplicação. | `http://localhost` ou `http://sua-api.com` |
+| `REACT_APP_API_PORT` | Porta de acesso ao backend da aplicação. | `3001` ou a porta configurada |
+| `REACT_APP_API_URL` | URL completa do backend, utilizada para requisições. | `https://backend-acessimap.onrender.com` ou a URL do ambiente |
